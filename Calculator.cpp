@@ -1,3 +1,4 @@
+// Viviene Marie C. Garcia - CS1303
 #include <iostream>
 #include <limits>
 
@@ -5,25 +6,25 @@ using namespace std;
 
 int ans;
 
-int add(int n1, int n2)
+int add(int n1, int n2) // function for addition
 {
     ans = n1 + n2;
     return ans;
 }
 
-int sub(int n1, int n2) 
+int sub(int n1, int n2) // function for subtraction
 {
     ans = n1 - n2;
     return ans;
 }
 
-int mult(int n1, int n2) 
+int mult(int n1, int n2) // function for multiplication
 {
     ans = n1 * n2;
     return ans;
 }
 
-int divi(int n1, int n2)
+int divi(int n1, int n2) // function for division
 {
     ans = n1 / n2;
     return ans;
@@ -38,7 +39,7 @@ struct Calcu // structure
     string eq;
 };
 
-void choice_menu()
+void choice_menu() // display choice menu after user input
 {
 	cout << "--------------------------------------" << endl;
 	cout << "  [A]gain?  |  [H]istory?  |  [Q]uit?";
@@ -46,7 +47,7 @@ void choice_menu()
 	cout << "Choice: ";
 }
 
-void search_menu()
+void search_menu() // display choices for history 
 {
 	cout << "+--------------+" << endl;
 	cout << "|    HISTORY   |" << endl;
@@ -75,7 +76,7 @@ int main()
 	cout << "+------------+" << endl;
 	cout << endl << "Type: ";
 	
-	cin >> All[size].num1 >> All[size].opt >> All[size].num2;
+	cin >> All[size].num1 >> All[size].opt >> All[size].num2; // USER INPUT (Ex. 1+2)
 
 	while (cin.fail()||All[size].opt != '+' && All[size].opt != '-' && All[size].opt != '*' && All[size].opt != '/') // error handling
 	{
@@ -93,7 +94,7 @@ int main()
 	
 	bool zero = false;
 		
-	switch (All[size].opt)
+	switch (All[size].opt) // checks the operation used
 	{ 
 	    case '+':
 		All[size].result = add(All[size].num1, All[size].num2);
@@ -124,12 +125,12 @@ int main()
 		return 0;
 	}
 	
-	if (!zero)
+	if (!zero) // !true = false (code block will not execute.) / !false = true (code block will execute)
 	{
-	All[size].eq = to_string(All[size].num1) + All[size].opt + to_string(All[size].num2) + "=" + to_string(All[size].result);
-		size++;
+		All[size].eq = to_string(All[size].num1) + All[size].opt + to_string(All[size].num2) + "=" + to_string(All[size].result); // combine inputs to 1 string. 
+		size++; // size increment by 1
 	}
-	cout << endl << endl << "Total Computations:" << size << endl;
+	cout << endl << endl << "Total Computations:" << size << endl; 
 	cout << endl;
 	choice_menu();
 	cin >> choice;
@@ -145,13 +146,13 @@ int main()
 		cin >> choice;
 	}
 				
-	if (choice == "Q" || choice == "q")
+	if (choice == "Q" || choice == "q") // quit
 	{
 		cout << endl << "Thank you!" << endl;
 		return 0;
 	}
 
-	if (choice == "H" || choice == "h") 
+	if (choice == "H" || choice == "h") // check the history
 	{
 		system ("CLS");
 		string find;
