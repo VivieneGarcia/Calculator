@@ -55,7 +55,7 @@ void search_menu()
 	cout << "[2] Num2" << endl;
 	cout << "[3] Operators" << endl;
 	cout << "[4] Results" << endl;
-	cout << "[5] Equations" << endl;
+	cout << "[5] Computations" << endl;
 	cout << "+--------------+" << endl;
 	cout << "Choice: ";
 }
@@ -229,9 +229,9 @@ int main()
 			if (find == "5")
 			{
 				system ("CLS");
-				cout << "-----------------" << endl;
-				cout << "| All Equations |" << endl;
-				cout << "-----------------";
+				cout << "--------------------" << endl;
+				cout << "| All Computations |" << endl;
+				cout << "--------------------";
 				for (int i = 0; i < size ; i++)
 				{
 					string *eq_ptr = &All[i].eq; // pointer and address (string equation)
