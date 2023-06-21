@@ -129,8 +129,8 @@ int main()
 	All[size].eq = to_string(All[size].num1) + All[size].opt + to_string(All[size].num2) + "=" + to_string(All[size].result);
 		size++;
 	}
-	
-	cout << endl << endl;
+	cout << endl << endl << "Total Computations:" << size << endl;
+	cout << endl;
 	choice_menu();
 	cin >> choice;
 	
